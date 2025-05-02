@@ -25,10 +25,9 @@ jobs:
     - name: Generate .spec file
       run: pyinstaller --onefile --windowed --distpath=dist --workpath=build Form.py
 
-    - name: Edit .spec file for hidden imports
+    - name: Edit .spec file for hidden imports (PowerShell)
       run: |
-        echo "Adding customtkinter to hidden imports"
-        sed -i 's/hiddenimports=[]/hiddenimports=["customtkinter"]/g' Form.spec
+        powershell -Command "(Get-Content Form.spec) -replace 'hiddenimports=\[\]', 'hiddenimports=[\"customtkinter\"]' | Set-Content Form.spec"
 
     - name: Build EXE using .spec file
       run: pyinstaller Form.spec
