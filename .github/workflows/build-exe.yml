@@ -31,7 +31,7 @@ jobs:
           pyinstaller --onefile --windowed --distpath=dist --workpath=build Form.py
 
       - name: Upload executable
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3  # Updated to version 3
         with:
-          name: Form
+          name: Form-executable
           path: dist/Form.exe
