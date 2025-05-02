@@ -23,7 +23,8 @@ jobs:
         pip install pyinstaller
 
     - name: Build EXE
-      run: pyinstaller --onefile --windowed --distpath=dist --workpath=build Form.py
+      run: pyinstaller --onefile --windowed --distpath=dist --workpath=build --hidden-import=customtkinter Form.py
+
 
     - name: Upload EXE Artifact
       uses: actions/upload-artifact@v4
