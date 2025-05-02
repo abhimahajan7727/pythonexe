@@ -27,7 +27,7 @@ jobs:
 
     - name: Edit .spec file for hidden imports (PowerShell)
       run: |
-        powershell -Command "(Get-Content Form.spec) -replace 'hiddenimports=\[\]', 'hiddenimports=["customtkinter\"]' | Set-Content Form.spec"
+        powershell -Command "(Get-Content Form.spec) -replace 'hiddenimports=\[\]', 'hiddenimports=["customtkinter"]' | Set-Content Form.spec"
 
     - name: Build EXE using .spec file
       run: pyinstaller Form.spec
