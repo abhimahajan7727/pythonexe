@@ -21,11 +21,6 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pyinstaller customtkinter pyperclip pandas
-        # Tkinter might need to be installed on some systems, so you can explicitly install it:
-        # Tkinter is usually bundled with Python, but in case it's missing on Windows, try installing the 'tk' package
-        # Use `apt-get` to install tkinter in case it is not available.
-        # On Windows, it should be available, but we can install it via Chocolatey if necessary
-        choco install python-tk
 
     - name: Build EXE
       run: pyinstaller --onefile --windowed --distpath=dist --workpath=build Form.py
